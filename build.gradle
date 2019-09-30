@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.8.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+group = 'com.khatri'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'build-announcements'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.mongodb:mongo-java-driver:3.11.0'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	testCompile 'org.springframework.boot:spring-boot-starter-test'}
